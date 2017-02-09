@@ -1,0 +1,16 @@
+<div class="board" >
+    <div class="panel">
+        <div class="card " >
+            <div class="card-block">
+                <h2 class="card-title">Add Card</h2>
+                <input type="text" #headertxtbox><button (click)="addCard(headertxtbox.value)" (click)="headertxtbox.value=''">Add</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel" *ngFor="let card of cardList;let i = index" >
+        <card [currentCard]="card">
+
+        </card>
+    </div>
+</div>

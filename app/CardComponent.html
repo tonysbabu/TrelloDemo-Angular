@@ -1,0 +1,16 @@
+<div class="card">
+    <div class="card-block">
+        <div class="cardContainer">
+            <div class="cardHeader">
+                <h2 class="card-title">{{currentCard.header}}</h2>
+            </div>
+            <div class="cardItems" dnd-sortable-container [sortableData]="currentCard.listItems">
+                <div class="cardItemDiv" *ngFor="let item of currentCard.listItems;let i = index" dnd-sortable [sortableIndex]="i">
+                    {{item}}<span></span>
+                </div>
+            </div>
+        </div>
+        <div class="addBox" *ngIf="currentCard" ><input type="text" #item ><button (click)="addItem(item.value)" (click)="item.value=''">Add</button></div>
+    </div>
+
+</div>
